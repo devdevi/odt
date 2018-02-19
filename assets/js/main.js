@@ -1,25 +1,40 @@
+$('#play').click(function() {
+  $('#init').empty();
+  star();
+});
+
+
 let counterSucces = '';
 let counterAcuwness = '';
 
-let total = counterAcuwness+ counterAcuwness;
-star();
+let total = '';
+console.log(total);
 
 function star() {
-  if (counterSucces !== 5) {
+  if (total !== 2) {
     $('#askB').empty();
     newAsk();
+  } else if (total === 2) {
+    $('#askB').empty();
+    $('#askB').append(`<h4>Finished</h4> <br>
+      <span><a class="waves-effect waves-white pulse btn-floating btn-large white red-text  text-accent-3" name="action" id="replay">rePlay</a></span>`);
+    $('#replay').click(function() {
+    location.reload();
+    });
+
+    // results();
   }
 }
 
 function newAsk() {
-  fetch(`https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=boolean`)
+  fetch('https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=boolean')
     .then(function(response) {
     // Turns the the JSON into a JS object
       return response.json();
     })
     .then(function(data) {
       const results = data.results;
-       console.log(results);
+      console.log(results);
       const ques = results[0].question;
       const cAnswer = results[0].correct_answer;
       console.log(ques, cAnswer);
@@ -30,11 +45,11 @@ function newAsk() {
          
           <form action="#" class="col s6 offset-s3 white z-depth-4">
           <p>
-          <input  name="group1" type="radio" value="true" id="test1" />
+          <input  name="group1" type="radio" value="True" id="test1" />
           <label for="test1">True</label>
           </p>
 
-          <input name="group1" type="radio" value="false" id="test2"/>
+          <input name="group1" type="radio" value="False" id="test2"/>
           <label for="test2">False</label>
           </p>
           </form>
@@ -49,16 +64,18 @@ function newAsk() {
         const selection = $("input[name='group1']:checked").val();
         console.log(`esta es algo ${selection}`);
         test(selection, cAnswer);
+        console.log(jQuery.type(selection), jQuery.type(cAnswer));
     });
       function test(elm, elm2) {
-
         if (elm === elm2) {
-          console.log('i am working for you babes');
           counterSucces++;
+          total++;
           console.log(counterSucces)
-        } else if( elm !== elm2 ){
+           star();
+
+        } else if ( elm !== elm2 ){
         counterAcuwness++
-        console.log(counterAcuwness);
+        total++
         star();
         }
 
@@ -75,40 +92,10 @@ function newAsk() {
 function newBoton(elm){
   $('#aNewBotton').html(elm);
 }
+;
 
 
 
 
 
 
-
- // function test(elm, elm2) {
- //  if (elm === elm2) {
- //    console.log('i am working for you babes');
- //    counterSucces++;
- //    console.log(counterSucces)
- //  } else if( elm !== elm2 ){
- //    counterAcuwness++
- //  }
-
- // }
-
-
-function chek(){
-
-
- // let selection = $("input[id='test1']:checked").val();
-   let selection = $('input[name="group1"]').is(':checked') === false;
-  console.log(`esta es algo ${selection}`);
-
-
-  if ( $('#test1').is(':checked') ) {
-   alert('Seleccionado');
-  }
-
-  if ($('input[name="group1"]').is(':checked') === false) {
-  alert('Must select an option.');
-  return;
-  }
-
-  }
