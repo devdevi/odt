@@ -3,7 +3,6 @@ $('#play').click(function() {
   star();
 });
 
-
 let counterSucces = '';
 let counterAcuwness = '';
 
@@ -16,10 +15,19 @@ function star() {
     newAsk();
   } else if (total === 2) {
     $('#askB').empty();
+    if (counterAcuwness > counterSucces) {
+      console.log('Sigue jugando para mejorar tu puntaje')
+    }else if(counterSucces === total){
+      console.log('eres el mejor');
+    }else if(counterAcuwness < counterSucces ){
+      console.log('Buen trabajo')
+    }else{
+      console.log('no pasa nada') }
     $('#askB').append(`<h4>Finished</h4> <br>
       <span><a class="waves-effect waves-white pulse btn-floating btn-large white red-text  text-accent-3" name="action" id="replay">rePlay</a></span>`);
+    
     $('#replay').click(function() {
-    location.reload();
+      location.reload();
     });
 
     // results();
