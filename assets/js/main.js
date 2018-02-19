@@ -95,7 +95,7 @@ function newAsk() {
         const selection = $("input[name='group1']:checked").val();
         if(selection === undefined){
           $('#alert').show();
-         $('#alert').html('<h6>You have to choise one answer </h6>');
+         $('#alert').html('<h6>You have to choose one answer </h6>');
           setTimeout(function() {
             $('#alert').hide(); 
           }, 5000);
