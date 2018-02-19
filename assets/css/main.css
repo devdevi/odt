@@ -41,9 +41,4 @@ form p{
     
     padding: 1em;
 }
- [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-    position: static;
-    left: 0px; 
-    opacity: 1; 
-  }
 
