@@ -14,7 +14,7 @@
 </head>
 
 <body class="red accent-3 ">
-    <nav class="nav-extended white">
+    <nav class="nav-extended white hide-on-small-only" id="nav">
       <div class="nav-wrapper">
          <div class="container valign-wrapper ">
          <div class="row">
@@ -30,43 +30,59 @@
     </nav>
 
 
-    <section class="container center white  red accent-3 " id="askBox">
-    
-    <div class="section white-text" id="init">
-      <h4>Let's go</h4>
+    <section class="section center-aling red accent-3 " id="askBox">
+
+    <div class="container center white-text" id="init">
+      <h2 id="mainTitle">Let's go</h2>
       <br>
       <span><a class="waves-effect waves-white pulse btn-floating btn-large white red-text  text-accent-3" name="action" id="play">Play</a></span>
     </div>
    
-            <div class="section white-text " id ="testZone">
+            <div class="container center white-text " id ="testZone">
 
-            <div class="row" id="askB"> 
-             <!-- <h6>Pregunta</h6>
+            <div class="row" id="askB">
+            
 
-            <div class="col s12  ">
-             
-              <form action="#" class="col s6 offset-s3 white z-depth-4">
-              <p>
-              <input name="group1" type="radio" id="test1" />
-              <label for="test1">True</label>
-              </p>
-              <p>
-              <input name="group1" type="radio" id="test2" />
-              <label for="test2">False</label>
-              </p>
-              </form>
-              <br>
-              <br>
-              <br>
+        
+<!--       nexquestion
+<p><strong>${ques}?</strong></p>
+        <div class="col s12">
+         
+          <form action="#" class="col s6 offset-s3 white z-depth-4">
+          <p>
+          <input  name="group1" type="radio" value="True" id="test1" />
+          <label for="test1">True</label>
+          </p>
+          <p>
+          <input name="group1" type="radio" value="False" id="test2"/>
+          <label for="test2">False</label>
+          </p>
+          </form>
+          <div class='col s12' id="aNewBotton"></a>
+          </div>
+          </div>   -->
+
+
+           <!-- respuestas <div class="col s6 offset-s3">
+              <h3>Test Over</h3>
+              <img class="responsive-img circle result" src="assets/img/error.jpeg" alt="">
+
+              <table class="centered">
+                <thead>
+                  <th>Right Answers:</th>
+                  <th>${countSucees} / 10</th>
+                </thead>
+              </table>
+              <p><strong>mensaje</strong></p>
+              <span><a class="waves-effect waves-white pulse btn-floating btn-large white red-text  text-accent-3" name="action" id="replay">rePlay</a></span>
             </div> -->
-<!--   <span><a class="waves-effect waves-white pulse btn-floating btn-large white red-text  text-accent-3" id="next">next</a></span> -->
               </div>
         
      </div>
 
     </section>
 
-      <footer class="center white-text light">&copy <a href="#" class="white-text" target="_blank">THE V POWER 2018</a></footer>
+      <footer class="center white-text hide light">&copy <a href="#" class="white-text" target="_blank">THE V POWER 2018</a></footer>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->

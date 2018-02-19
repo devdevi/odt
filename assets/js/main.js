@@ -1,9 +1,10 @@
+$('#mainTitle').css('padding-top', '10%');
 $('#play').click(function() {
   $('#init').empty();
   star();
 });
 
-let counterSucces = '';
+let counterSucces = 0;
 let counterAcuwness = '';
 
 let total = '';
@@ -12,19 +13,40 @@ console.log(total);
 function star() {
   if (total !== 2) {
     $('#askB').empty();
+
     newAsk();
   } else if (total === 2) {
     $('#askB').empty();
+    let mensage = '';
+    let img = '';
     if (counterAcuwness > counterSucces) {
-      console.log('Sigue jugando para mejorar tu puntaje')
+      mensage = 'Sigue jugando para mejorar tu puntaje';
+      img = 'assets/img/queOnda.jpeg';
     }else if(counterSucces === total){
-      console.log('eres el mejor');
+      mensage = 'Eres el mejor';
+      img = 'assets/img/acierto.jpeg';
     }else if(counterAcuwness < counterSucces ){
-      console.log('Buen trabajo')
+      mensage =  'Buen trabajo';
+      img = 'assets/img/acierto.jpeg';
     }else{
-      console.log('no pasa nada') }
-    $('#askB').append(`<h4>Finished</h4> <br>
-      <span><a class="waves-effect waves-white pulse btn-floating btn-large white red-text  text-accent-3" name="action" id="replay">rePlay</a></span>`);
+      mensage = 'no pasa nada';
+      img = 'assets/img/error.jpeg';
+      
+       }
+       $('#nav').hide();
+    $('#askB').append(`
+      <div class="col s6 offset-s3">
+              <h3>Test Over</h3>
+              <img class="responsive-img circle result" src="${img}" alt="">
+              <table class="centered">
+                <thead>
+                  <th>Answers:</th>
+                  <th>${counterSucces} / 10</th>
+                </thead>
+              </table>
+              <h4><strong>${mensage}</strong></h4>
+              <span><a class="waves-effect waves-white pulse btn btn-large white red-text  text-accent-3" name="action" id="replay">rePlay</a></span>
+            </div>`);
     
     $('#replay').click(function() {
       location.reload();
@@ -56,14 +78,15 @@ function newAsk() {
           <input  name="group1" type="radio" value="True" id="test1" />
           <label for="test1">True</label>
           </p>
+           <p>
 
           <input name="group1" type="radio" value="False" id="test2"/>
           <label for="test2">False</label>
           </p>
           </form>
-          <br>
-          <br>
-          <br> <span id="aNewBotton"></span></div>  `
+           <div class='col s12' id="aNewBotton"></a>
+          </div>
+          </div> `
       );
        const button = `<a class="waves-effect waves-white pulse btn-floating btn-large white red-text  text-accent-3" id="next">next</a>`;
       newBoton(button);
