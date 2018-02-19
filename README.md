@@ -1,17 +1,18 @@
-# WEATHER
+# Test v²
 
-# **Dark Sky API**
+# **opentdb API**
+- **PROYECTO EN FIREBASE** -(https://the-v2.firebaseapp.com)
+
 
 ##  **OBJETIVO**
-
-Practicar, dominio de  APIs
+Crear una trivia haciendo uso de la Api
 
 ##  **DESARROLLO**
 
 -Es6 Fetch: Para llamar la api
--Dark Sky API
+-open Trvia data base API
 
-###Nuestra pagina se visualiza asi:
+##Nuestra app se visualiza asi:
 
 
 ![Alt text](assets/img/scree2.jpeg).
@@ -22,13 +23,11 @@ Practicar, dominio de  APIs
 ##  Herramientas
 
 - Html5
-- Dark Sky API
+- open Trvia data base API
 - Jquery
 
 ## Autoras
 
-
-- **VEVE** - [@VEVE](https://github.com/VEVE)
 
 - **Visaka** - [@visidevi](https://github.com/visidevi)
 
