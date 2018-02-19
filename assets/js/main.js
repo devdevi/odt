@@ -41,30 +41,31 @@ fetch(`https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=bool
               </form>
               <br>
               <br>
-              <br> `
+              <br> <span id="aNewBotton"></span>
+              `
              );
-          if ($('#test1').val() === cAnswer) {
-            console.log('yeah');
-          } else if ($('#test2').val() === cAnswer) {
-            console.log('yeah 2');
-
-          } else if ($('#test1').is(':checked') ) {
-    alert('Seleccionado');
+         newBoton()
         }  
-        }
-      });
-
+    });
 }
+
+
+function newBoton() {
+  $('#aNewBotton').append(`<a class="waves-effect waves-white pulse btn-floating btn-large white red-text  text-accent-3" id="next">next</a>`
+  );
+}
+
 oneTest()
 
 $('#next').click(function(){
 
   let selection = $("input[name='group1']:checked").val();
   console.log(`esta es algo ${selection}`);
-
-
-console.log('que')
+  test();
 });
+ function test(){
+  
+ }
 
 
 function chek(){
