@@ -11,11 +11,10 @@ let total = '';
 console.log(total);
 
 function star() {
-  if (total !== 2) {
+  if (total !== 5) {
     $('#askB').empty();
-
     newAsk();
-  } else if (total === 2) {
+  } else if (total === 5) {
     $('#askB').empty();
     let mensage = '';
     let img = '';
@@ -41,7 +40,7 @@ function star() {
               <table class="centered">
                 <thead>
                   <th>Answers:</th>
-                  <th>${counterSucces} / 10</th>
+                  <th>${counterSucces} / 5</th>
                 </thead>
               </table>
               <h4><strong>${mensage}</strong></h4>
@@ -72,6 +71,7 @@ function newAsk() {
       $('#askB').append(`<p><strong>${ques}?</strong></p>
 
         <div class="col s12">
+        <div id="alert" class="white red-text"></div>
          
           <form action="#" class="col s6 offset-s3 white z-depth-4">
           <p>
@@ -93,9 +93,18 @@ function newAsk() {
 
       $('#next').click(function() {
         const selection = $("input[name='group1']:checked").val();
-        console.log(`esta es algo ${selection}`);
-        test(selection, cAnswer);
-        console.log(jQuery.type(selection), jQuery.type(cAnswer));
+        if(selection === undefined){
+          $('#alert').show();
+         $('#alert').html('<h6>You have to choise one answer </h6>');
+          setTimeout(function() {
+            $('#alert').hide(); 
+          }, 5000);
+        } else {
+           test(selection, cAnswer);
+        }
+        //console.log(`esta es algo ${selection}`);
+        //test(selection, cAnswer);
+       
     });
       function test(elm, elm2) {
         if (elm === elm2) {
@@ -111,12 +120,6 @@ function newAsk() {
         }
 
       }
-
-
-
-
-
-
     });
 }
 

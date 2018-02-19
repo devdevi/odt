@@ -51,3 +51,6 @@ footer {
   left: 50%;
 }
 
+#alert h6{
+    padding: 2em;
+}
